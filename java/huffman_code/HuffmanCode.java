@@ -160,18 +160,18 @@ public class HuffmanCode
 			obj1 = chars.remove(0);
 			obj2 = chars.remove(0);
 			if (obj1.getClass().equals(Character.class))  
-				tmpRoot.right = new Node((char)obj1);
+				tmpRoot.left = new Node((char)obj1);
 			else if (obj1.getClass().equals(Integer.class)) 
-				tmpRoot.right = new Node((int)obj1);
+				tmpRoot.left = new Node((int)obj1);
 			else
-				tmpRoot.right = (Node)obj1;
+				tmpRoot.left = (Node)obj1;
 				
 			if (obj2.getClass().equals(Character.class))  
-				tmpRoot.left = new Node((char)obj2);
+				tmpRoot.right = new Node((char)obj2);
 			else if (obj1.getClass().equals(Integer.class))
-				tmpRoot.left = new Node((int)obj2);
+				tmpRoot.right = new Node((int)obj2);
 			else
-				tmpRoot.left = (Node)obj2;		
+				tmpRoot.right = (Node)obj2;		
 					
 			newFrequency = (int)values.remove(0) + (int)values.remove(0);
 			tmpRoot.frequencySum = newFrequency;
