@@ -23,7 +23,16 @@ public class KMP
 			pos++;
 		}
 	
+	/*
+		System.out.println("*** Prefix table :");
+		for (int a : prfx)
+		{
+			System.out.print(a + " ");
+		}
+		System.out.println("\n\n");
+	*/
 		return prfx;
+		
 	}
 	
 	public static int match(String txt, String ptrn)
@@ -48,7 +57,7 @@ public class KMP
 			{
 				System.out.println("match found from " +  (i-ptrnlen+1) + " to " + i);
 				j = prfx[j-1];
-				i += (ptrnlen - 1);
+				i++;
 				match_found = true;
 			}
 			i++;
@@ -103,6 +112,6 @@ public class KMP
 		String pattern = inputArray[1];
 		KMP.match(text,pattern);	
 	}
-	*/ 
+	*/
 	
 }
