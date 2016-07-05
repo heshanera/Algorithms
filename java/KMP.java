@@ -23,16 +23,15 @@ public class KMP
 			pos++;
 		}
 	
-	/*
-		System.out.println("*** Prefix table :");
+		/*
+		System.out.println("*** prefix :");
 		for (int a : prfx)
 		{
 			System.out.print(a + " ");
 		}
 		System.out.println("\n\n");
-	*/
+		*/
 		return prfx;
-		
 	}
 	
 	public static int match(String txt, String ptrn)
@@ -46,8 +45,7 @@ public class KMP
 		{
 			while ((j > 0) && (ptrn.charAt(j) != txt.charAt(i)))
 			{
-				
-				j = prfx[j];
+				j = prfx[j-1];
 			}
 			if (ptrn.charAt(j) == txt.charAt(i))
 			{
@@ -56,8 +54,7 @@ public class KMP
 			if (j == ptrnlen)
 			{
 				System.out.println("match found from " +  (i-ptrnlen+1) + " to " + i);
-				j = prfx[j-1];
-				i++;
+				j = 0;
 				match_found = true;
 			}
 			i++;
@@ -81,7 +78,7 @@ public class KMP
 			while ((j > 0) && (ptrn.charAt(j) != txt.charAt(i)))
 			{
 				
-				j = prfx[j];
+				j = prfx[j-1];
 			}
 			if (ptrn.charAt(j) == txt.charAt(i))
 			{
@@ -90,7 +87,8 @@ public class KMP
 			if (j == ptrnlen)
 			{
 				System.out.println("match found from " +  (i-ptrnlen+1) + " to " + i);
-				j = prfx[j-1];
+				j = 0;
+				i = i - ptrnlen + 1;
 				match_found = true;
 			}
 			i++;
