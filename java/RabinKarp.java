@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class RabinCarp
+public class RabinKarp
 {	
 	public static long calcPatternHash(String def)
 	{
